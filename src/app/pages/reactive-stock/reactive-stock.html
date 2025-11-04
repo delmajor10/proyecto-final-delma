@@ -1,0 +1,73 @@
+<h2>Delma Ortiz</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <h3>Formulario reactivo de Stock</h3>
+    <form [formGroup]="stockForm" (ngSubmit)="addStock()">
+      <div class="mb-3">
+        <label>Nombre del producto</label>
+        <input type="text" class="form-control" formControlName="name" />
+      </div>
+
+      <div class="mb-3">
+        <label>Cantidad</label>
+        <input type="number" class="form-control" formControlName="cuantity" />
+      </div>
+
+      <div class="mb-3">
+        <label>Existencia</label>
+        <input type="number" class="form-control" formControlName="existance" />
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        Agregar
+      </button>
+    </form>
+  </div>
+
+  <div class="col">
+
+    <stock-list [stockList]="stockList"></stock-list>
+  </div>
+</div>
+
+<hr>
+
+<div class="row mt-5">
+  <div class="col">
+    <span>Valid</span>
+    <pre>{{ stockForm.valid | json }}</pre>
+
+    <span>Pristine</span>
+    <pre>{{ stockForm.pristine | json }}</pre>
+
+    <span>Touched</span>
+    <pre>{{ stockForm.touched | json }}</pre>
+
+    <span>Value</span>
+    <pre>{{ stockForm.value | json }}</pre>
+  </div>
+
+  <div class="col">
+    <span>Errors name</span>
+    <pre>{{ stockForm.controls.name.errors | json }}</pre>
+
+    <span>Errors cuantity</span>
+    <pre>{{ stockForm.controls.cuantity.errors | json }}</pre>
+
+    <span>Errors existance</span>
+    <pre>{{ stockForm.controls.existance.errors | json }}</pre>
+  </div>
+
+  <div class="col">
+    <span>Value name</span>
+    <pre>{{ stockForm.controls.name.value | json }}</pre>
+
+    <span>Value cuantity</span>
+    <pre>{{ stockForm.controls.cuantity.value | json }}</pre>
+
+    <span>Value existance</span>
+    <pre>{{ stockForm.controls.existance.value | json }}</pre>
+  </div>
+</div>

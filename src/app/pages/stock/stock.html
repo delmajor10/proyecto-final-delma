@@ -1,0 +1,12 @@
+<p>Stock works!</p>
+
+<hr>
+
+<div class="row">
+    <div class="col">
+        <stock-add (OnNewStock)="stockService.addStock($event)"></stock-add>
+    </div>
+    <div class="col">
+        <stock-list [stockList]="stockService.stockList()"></stock-list>
+    </div>
+</div>
