@@ -1,0 +1,42 @@
+<div class="row text-center my-4">
+  <h1>Crear Categoría de Libro</h1>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          
+          <form [formGroup]="categoryForm" (ngSubmit)="submitWithId()">
+
+            <div class="mb-3">
+              <label for="categoryname" class="form-label">Nombre Categoría</label>
+              <input
+                type="text"
+                class="form-control"
+                [class.is-invalid]="isFieldInvalid('categoryname')"
+                id="categoryname"
+                formControlName="categoryname"
+                placeholder="Ingrese el nombre de la categoría"
+              >
+              <div class="invalid-feedback" *ngIf="isFieldInvalid('categoryname')">
+                {{ getErrorMessage('categoryname') }}
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 justify-content-end">
+              <button type="button" class="btn btn-secondary" (click)="onCancel()" [disabled]="isSubmitting">
+                Cancelar
+              </button>
+              <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+                {{ isSubmitting ? 'Guardando...' : 'Guardar' }}
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

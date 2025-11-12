@@ -1,0 +1,22 @@
+<ng-container *ngIf="!authService.currentUserValue">
+  <router-outlet></router-outlet>
+</ng-container>
+
+<ng-container *ngIf="authService.currentUserValue">
+  <nav class="navbar px-4" style="background-color: #0d1b2a;">
+    <span class="navbar-brand mb-0 h1 text-light">📚 Sistema de Biblioteca</span>
+    <button class="btn btn-outline-light btn-sm">Cerrar sesión</button>
+  </nav>
+
+  <div class="d-flex" style="min-height: 100vh;">
+    <aside style="width: 220px; background-color: #0d1b2a; color: white;" class="p-3">
+      <app-sidebar></app-sidebar>
+    </aside>
+
+    <main class="flex-grow-1 bg-light p-4">
+      <div class="card shadow-sm p-3">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+</ng-container>

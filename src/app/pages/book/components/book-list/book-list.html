@@ -1,0 +1,63 @@
+<div class="row text-center my-4">
+  <h1>Lista de Libros</h1>
+</div>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-10 text-end">
+      <button class="btn btn-primary" (click)="onAddBook()">
+        Agregar Libro
+      </button>
+    </div>
+  </div>
+</div> 
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div class="row">
+        <div class="col">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Título</th>
+                <th scope="col">Autor</th>
+                <th scope="col">Nro. Páginas</th>
+                <th scope="col">Disponibilidad</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (book of books$ | async; track book.id) {
+              <tr>
+                <th scope="row">{{ book.id }}</th>
+                <td>{{ book.title | titlecase }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.pages }}</td>
+                <td>{{ book.available ? 'Disponible' : 'No disponible' }}</td>
+
+                <td class="d-flex gap-2">
+                  <button class="btn btn-warning btn-sm" (click)="onEditBook(book.id)"
+                    [disabled]="isDeleting() === book.id">
+                    Editar
+                  </button>
+                  <button class="btn btn-danger btn-sm" (click)="onDeleteBook(book.id)"
+                    [disabled]="isDeleting() === book.id">
+                    {{ isDeleting() === book.id ? 'Eliminando...' : 'Eliminar' }}
+                  </button>
+                </td>
+              </tr>
+              } @empty {
+              <tr>
+                <td colspan="6" class="text-center">No hay libros registrados</td>
+              </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "fullname": "John Doe",
+      "username": "john.doe",
+      "password": "password123",
+      "role": "ADMIN"
+    },
+    {
+      "id": "2",
+      "fullname": "Jane Smith",
+      "username": "jane.smith",
+      "password": "password123",
+      "role": "ADMIN"
+    },
+    {
+      "id": "3",
+      "fullname": "Mike Johnson",
+      "username": "mike.j",
+      "password": "password123",
+      "role": "USER"
+    },
+    {
+      "id": "4",
+      "fullname": "Sarah Williams",
+      "username": "sarah.w",
+      "password": "password123",
+      "role": "USER"
+    },
+    {
+      "id": "5",
+      "fullname": "Francisco Ivan",
+      "username": "francisco.i",
+      "password": "password123",
+      "role": "ADMIN"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "categoryname": "Novela"
+    },
+    {
+      "id": "2",
+      "categoryname": "Ciencia Ficción"
+    },
+    {
+      "id": "3",
+      "categoryname": "Historia"
+    },
+    {
+      "id": "4",
+      "categoryname": "Filosofía"
+    },
+    {
+      "id": "5",
+      "categoryname": "Terror"
+    }
+  ],
+  "books": [
+    {
+      "id": "1",
+      "title": "Cien años de soledad",
+      "author": "Gabriel García Márquez",
+      "pages": 417,
+      "available": true
+    },
+    {
+      "id": "2",
+      "title": "1984",
+      "author": "George Orwell",
+      "pages": 328,
+      "available": false
+    },
+    {
+      "id": "3",
+      "title": "Sapiens: De animales a dioses",
+      "author": "Yuval Noah Harari",
+      "pages": 498,
+      "available": true
+    },
+    {
+      "id": "4",
+      "title": "El principito",
+      "author": "Antoine de Saint-Exupéry",
+      "pages": 96,
+      "available": true
+    },
+    {
+      "id": "5",
+      "title": "Drácula",
+      "author": "Bram Stoker",
+      "pages": 415,
+      "available": false
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<div class="row text-center my-4">
+  <h1>Editar Categoría</h1>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+
+      <div *ngIf="isLoading" class="text-center my-5">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
+      </div>
+
+      <div class="card" *ngIf="!isLoading">
+        <div class="card-body">
+          <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+
+            <div class="mb-3">
+              <label for="categoryname" class="form-label">Nombre Categoría</label>
+              <input type="text" class="form-control" [class.is-invalid]="isFieldInvalid('categoryname')" id="categoryname"
+                formControlName="categoryname" placeholder="Ingrese el nombre de la categoría">
+              <div class="invalid-feedback" *ngIf="isFieldInvalid('categoryname')">
+                {{ getErrorMessage('categoryname') }}
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 justify-content-end">
+              <button type="button" class="btn btn-secondary" (click)="onCancel()" [disabled]="isSubmitting">
+                Cancelar
+              </button>
+              <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+                {{ isSubmitting ? 'Actualizando...' : 'Actualizar' }}
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
